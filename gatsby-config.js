@@ -5,6 +5,32 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: `key1rK5Ixke8MZJ3Q`, // may instead specify via env, see below
+        tables: [
+          {
+            baseId: `app6aY4cxPxP5mJ8s`,
+            tableName: `Imported table`,
+          },
+          {
+            baseId: `app6aY4cxPxP5mJ8s`,
+            tableName: `Kategorie`,
+          },
+          {
+            baseId: `app6aY4cxPxP5mJ8s`,
+            tableName: `Subkategorie`,
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {graphql} from 'gatsby'
-import Cart from "../components/Cart"
+import Cart from "../components/cart"
 
 class PostPage extends Component {
 

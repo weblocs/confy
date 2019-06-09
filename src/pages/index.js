@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Cart from "../components/Cart"
+import Cart from "../components/cart"
 import Header from "../components/header"
 
 class MainPage extends React.Component {

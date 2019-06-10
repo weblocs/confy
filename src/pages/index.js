@@ -49,7 +49,7 @@ class MainPage extends React.Component {
             overflowY: "scroll",
           }}
         >
-          <h2 style={{ marginTop: 48, marginBottom: 22 }}>Kategorie</h2>
+          <h2 style={{ marginTop: 48, marginBottom: 42 }}>Kategorie</h2>
 
           <div className="flex">
             {this.props.data.allAirtable.edges

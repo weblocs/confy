@@ -25,6 +25,7 @@
                 id
                 data {
                   name
+                  Kategoria_PL
                   email
                   Name
                   phone

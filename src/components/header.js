@@ -36,20 +36,20 @@ class Header extends React.Component {
                 position: `fixed`,
                 height: "100%",
                 width: `300px`,
-                top: 105,
+                top: 117,
                 left: 0,
               }}
             >
               <div style={{ position: "fixed", top: 20, left: 20 }}>
                 <Link style={{ textDecoration: "none", color: "#222" }} to="/">
-                  <h1 style={{ marginBottom: 0 }}>Confy </h1>
-                  <h3>{this.props.category}</h3>
+                  <h1 style={{ marginBottom: 10 }}>Confy </h1>
+                  <h4 style={{maxWidth: 300}}>{this.props.category}</h4>
                 </Link>
               </div>
               <Scrollbars style={{ width: 300, height: 600 }}>
                 <ul className="navLink">
                   {data.allAirtable.edges
-                    .filter(cart => cart.node.data.image !== null)
+                    // .filter(cart => cart.node.data.image !== null)
                     .filter(
                       cart =>
                         cart.node.data.Kategoria_PL === this.props.category

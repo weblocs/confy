@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {graphql} from 'gatsby'
 import Cart from "../components/cart"
+import Header from "../components/header"
 
 class PostPage extends Component {
 
@@ -9,6 +10,18 @@ class PostPage extends Component {
     const data = this.props.data;
     return (
         <div>
+          {/* <Header category={postData.data.name}  /> */}
+        <main
+          style={{
+            position: `relative`,
+            height: "100%",
+            width: `calc(100% - 300px)`,
+            top: 0,
+            left: `150px`,
+            padding: 15,
+            overflowY: "scroll",
+          }}
+        >
             <div style={{marginBottom: 20, width: '100%', height: 250, position: 'relative', background: `url(${postData.data.image})`, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: 10 }}>
             <div style={{background: 'rgba(0,0,0,.4)', width: '100%', height: '100%', borderRadius: 10}}>
                 <div style={{position: 'absolute', bottom: 30, left: 40}}>
@@ -41,6 +54,7 @@ class PostPage extends Component {
                 />
                 ))}
             </div>
+            </main>
         </div>
     )
   }

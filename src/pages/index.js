@@ -36,7 +36,7 @@ class MainPage extends React.Component {
         ))}
     </div>  */}
 
-        <Header category={this.state.category} />
+        {/* <Header category={this.state.category} /> */}
 
         <main
           style={{
@@ -44,7 +44,7 @@ class MainPage extends React.Component {
             height: "100%",
             width: `calc(100% - 300px)`,
             top: 0,
-            left: `300px`,
+            left: `150px`,
             padding: 15,
             overflowY: "scroll",
           }}

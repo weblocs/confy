@@ -1,8 +1,8 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 
 const Cart = ({name, photo, link}) => (
-  // <Link to={link}>
+  <Link to={link}>
     <div
       className="flexBox"
       style={{
@@ -13,7 +13,7 @@ const Cart = ({name, photo, link}) => (
     >
       <span>{name}</span>
     </div>
-  // </Link>
+  </Link>
 )
 
 export default Cart

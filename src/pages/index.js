@@ -5,21 +5,23 @@ import Header from "../components/header"
 
 class MainPage extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { category: "Artyści i prowadzący" };
+    super(props)
+    this.state = { category: "Artyści i prowadzący" }
   }
 
-  changeCategory  = (cart) => {
-    if(this.state.category === "Artyści i prowadzący") {
+  changeCategory = cart => {
+    if (this.state.category === "Artyści i prowadzący") {
       this.setState({
-        category: cart.node.data.name
-      });
+        category: cart.node.data.name,
+      })
     } else {
       this.setState({
-        category: cart.node.data.name
-      });
+        category: cart.node.data.name,
+      })
     }
   }
+
+  
 
   render() {
     return (
@@ -34,36 +36,35 @@ class MainPage extends React.Component {
         ))}
     </div>  */}
 
-          <Header category={this.state.category} />
+        <Header category={this.state.category} />
 
-
-          <main style={{
+        <main
+          style={{
             position: `relative`,
-            height: '100%',
+            height: "100%",
             width: `calc(100% - 300px)`,
             top: 0,
             left: `300px`,
             padding: 15,
-            overflowY: 'scroll'
+            overflowY: "scroll",
           }}
-          >
+        >
+          <h2 style={{ marginTop: 48, marginBottom: 22 }}>Kategorie</h2>
 
-        <h2 style={{ marginTop: 30, marginBottom: 40 }}>Kategorie</h2>
-        
-        <div className="flex">
-          {this.props.data.allAirtable.edges
-            .filter(cart => cart.node.table === "Kategorie")
-            .map(cart => (
-              <span onClick={() => this.changeCategory(cart)}>
-              <Cart
-                key={cart.node.id}
-                name={cart.node.data.name}
-                link={`/category/${cart.node.id}`}
-                photo={cart.node.data.image}
-              />
-              </span>
-            ))}
-        </div>
+          <div className="flex">
+            {this.props.data.allAirtable.edges
+              .filter(cart => cart.node.table === "Kategorie")
+              .map(cart => (
+                <span onClick={() => this.changeCategory(cart)}>
+                  <Cart
+                    key={cart.node.id}
+                    name={cart.node.data.name}
+                    link={`/category/${cart.node.id}`}
+                    photo={cart.node.data.image}
+                  />
+                </span>
+              ))}
+          </div>
         </main>
       </div>
     )
@@ -74,7 +75,7 @@ export default MainPage
 
 export const query = graphql`
   query {
-    allAirtable {
+    allAirtable(sort: {fields: data___number}) {
       edges {
         node {
           recordId

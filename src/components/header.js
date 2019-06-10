@@ -82,7 +82,10 @@ class Header extends React.Component {
                                   color: "#fff",
                                   bottom: 10,
                                   left: 10,
-                                  paddingRight: 10,
+                                  width: '100%',
+                                  paddingRight: 20,
+                                  fontSize: 16,
+                                  lineHeight: '22px'
                                 }}
                               >
                                 {todo.node.data.Name}
